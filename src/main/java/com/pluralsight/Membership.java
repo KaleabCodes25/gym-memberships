@@ -17,12 +17,12 @@ public abstract class Membership {
 
     public BigDecimal getSignUpFee(){
 
-        return null;
+        return new BigDecimal("49.00");
     }
 
     public BigDecimal getContractTotal(){
 
-        return getMonthlyPrice().multiply(BigDecimal.valueOf(months));
+        return getMonthlyPrice().multiply(BigDecimal.valueOf(months)).add(getSignUpFee()) ;
     }
 
     public String getMemberName() {
