@@ -18,7 +18,7 @@ public class FamilyMembership extends Membership{
             monthly = monthly.multiply(new BigDecimal("0.90"));
 
         }else{
-            monthly = getBaseRate().add(new BigDecimal("12.50").multiply(BigDecimal.valueOf(extraMembers)));
+            monthly = getBaseRate().add(                          new BigDecimal("12.50").multiply(BigDecimal.valueOf(extraMembers)));
         }
         return monthly;
     }
@@ -33,8 +33,7 @@ public class FamilyMembership extends Membership{
 
     @Override
     public String toString() {
-        return "FamilyMembership{" +
-                "extraMembers=" + extraMembers +
-                '}';
+        return "Family " + " | " + getMemberName() + " | " + getMonths() +
+                " months " + " | " + "extraMembers: " + extraMembers;
     }
 }

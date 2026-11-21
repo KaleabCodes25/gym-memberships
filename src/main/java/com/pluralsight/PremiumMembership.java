@@ -46,8 +46,7 @@ public class PremiumMembership extends Membership {
 
     @Override
     public String toString() {
-        return "PremiumMembership{" +
-                "guestPasses=" + guestPasses +
-                '}';
+        return "Premium " + " | " + getMemberName() + " | " + getMonths() +
+                " months " + " | " + " guestPasses: " + guestPasses;
     }
 }
