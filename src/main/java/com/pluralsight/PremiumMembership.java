@@ -13,6 +13,17 @@ public class PremiumMembership extends Membership {
     @Override
     public BigDecimal getMonthlyPrice() {
         return getBaseRate().add(new BigDecimal("18.50"));
+
+    }
+    @Override
+    public BigDecimal getSignUpFee(){
+        BigDecimal signUp;
+        if(getMonths() >= 12){
+            signUp = BigDecimal.ZERO;
+        }else{
+            signUp = super.getSignUpFee();
+        }
+        return signUp;
     }
 
     public void useGuestPass(){
