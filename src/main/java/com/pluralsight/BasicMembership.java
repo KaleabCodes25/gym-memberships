@@ -5,9 +5,9 @@ import java.math.BigDecimal;
 public class BasicMembership extends Membership {
     private boolean offPeakOnly;
 
-    public BasicMembership(String memberName, int months, BigDecimal baseRate, boolean ofPeakOnly) {
+    public BasicMembership(String memberName, int months, BigDecimal baseRate, boolean offPeakOnly) {
         super(memberName, months, baseRate);
-        this.offPeakOnly = ofPeakOnly;
+        this.offPeakOnly = offPeakOnly;
     }
 
     @Override
@@ -19,19 +19,19 @@ public class BasicMembership extends Membership {
         }
     }
 
-    public boolean isOfPeakOnly() {
+    public boolean isOffPeakOnly() {
         return offPeakOnly;
     }
 
-    public void setOfPeakOnly(boolean ofPeakOnly) {
-        this.offPeakOnly = ofPeakOnly;
+    public void setOffPeakOnly(boolean offPeakOnly) {
+        this.offPeakOnly = offPeakOnly;
     }
 
     @Override
     public String toString() {
-        return "BasicMembership{" +
-                "ofPeakOnly=" + offPeakOnly +
-                '}';
+        return "Basic " + " | " + getMemberName() + " | " +
+                getMonths() + " months " + " | " + " off-Peak only: " + offPeakOnly;
+
     }
 
 }
