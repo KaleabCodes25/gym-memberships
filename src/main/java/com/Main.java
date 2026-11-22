@@ -1,9 +1,6 @@
 package com;
 
-import com.pluralsight.BasicMembership;
-import com.pluralsight.FamilyMembership;
-import com.pluralsight.Membership;
-import com.pluralsight.PremiumMembership;
+import com.pluralsight.*;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -27,6 +24,7 @@ public class Main {
 
         FamilyMembership seven = new FamilyMembership("Emma Wilson",6,new BigDecimal("30.00"),1);
 
+        CorporateMembership eight = new CorporateMembership("Olivia Martin",12,new BigDecimal("30.00"),new BigDecimal("0.40"));
         List<Membership> memberships = new ArrayList<>();;
         memberships.add(second);
         memberships.add(third);
@@ -34,6 +32,8 @@ public class Main {
         memberships.add(five);
         memberships.add(six);
         memberships.add(seven);
+        memberships.add(eight);
+
         printCosts(memberships);
         secondLoop(memberships);
         thirdLoop(memberships);
