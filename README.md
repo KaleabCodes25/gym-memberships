@@ -21,7 +21,7 @@ Each one with its own pricing, discounts and benefits.
      images folder and keep the line below. If your project has no class diagram, delete this whole section,
      heading included. -->
 
-![class-diagram.png](images/class-diagram.png)
+![class-diagram.png](images/class-diagram%20with%20Bonus.png)
 
 ## Features
 
