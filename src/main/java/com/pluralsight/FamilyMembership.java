@@ -18,7 +18,7 @@ public class FamilyMembership extends Membership{
             monthly = monthly.multiply(new BigDecimal("0.90"));
 
         }else{
-            monthly = getBaseRate().add(                          new BigDecimal("12.50").multiply(BigDecimal.valueOf(extraMembers)));
+            monthly = getBaseRate().add(new BigDecimal("12.50").multiply(BigDecimal.valueOf(extraMembers)));
         }
         return monthly;
     }
