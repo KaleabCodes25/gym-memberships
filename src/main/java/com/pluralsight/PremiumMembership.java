@@ -29,8 +29,7 @@ public class PremiumMembership extends Membership {
     public void useGuestPass(){
         if(guestPasses > 0){
             guestPasses--;
-
-            System.out.printf("%s used a guest pass. Pases left: %d%n",getMemberName(),guestPasses);
+            System.out.printf("%s used a guest pass. Pases left: %d\n",getMemberName(),guestPasses);
         }else{
             System.out.println(getMemberName()+ " has no guest passes left!!");
         }

@@ -36,6 +36,7 @@ public class Main {
         memberships.add(six);
         memberships.add(seven);
         printCosts(memberships);
+        secondLoop(memberships);
 
     }
     public static void printCosts(List<Membership> memberships){
@@ -48,12 +49,27 @@ public class Main {
             allContract = allContract.add(membership.getContractTotal());
 
         }
-        System.out.println("--- Totals ---");
-        System.out.printf("Memberships: %d ", memberships.size());
+        System.out.print("--- Totals ---\n");
+        System.out.printf("Memberships: %d%n", memberships.size());
         System.out.printf("Monthly income: $%.2f%n", monthlyPriceTotal);
         System.out.printf("All contracts: $%.2f%n", allContract);
 
     }
+    public static void secondLoop(List<Membership> memberships){
+        System.out.println("--- Front desk notes ---");
+        for (Membership membership : memberships) {
+            if(membership instanceof BasicMembership member) {
+                if(member.isOffPeakOnly()){
+                    System.out.println(membership.getMemberName() + ": entry between 10:00 and 16:00 only");
+                }
+            } else if (membership instanceof PremiumMembership) {
+                ((PremiumMembership) membership).useGuestPass();
+            } else if (membership instanceof FamilyMembership) {
+                System.out.printf("%s: print %d key cards%n",membership.getMemberName(),((FamilyMembership) membership).getExtraMembers()+1);
+            }
+        }
+    }
+
 
 
 }
