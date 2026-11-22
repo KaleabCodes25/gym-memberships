@@ -2,7 +2,7 @@ package com.pluralsight;
 
 import java.math.BigDecimal;
 
-public abstract class Membership {
+public class Membership {
     private String memberName;
     private int months;
     private BigDecimal baseRate;
@@ -14,7 +14,9 @@ public abstract class Membership {
     }
 
 
-    public abstract BigDecimal getMonthlyPrice();
+    public BigDecimal getMonthlyPrice(){
+        return baseRate;
+    }
 
     public BigDecimal getSignUpFee(){
 
