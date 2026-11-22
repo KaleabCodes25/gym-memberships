@@ -10,7 +10,8 @@ A java application that allows users to buy different types of memberships.
      Example: A console app that keeps a store's inventory in a csv file and lets a clerk search it. -->
 
 ## Description of the Project
-
+ An application that manages different types of gym memberships, like Basic,Family, and Premium.
+Each one with its own pricing, discounts and benefits.
 <!-- Three to five sentences. What the application does, who uses it, what problem it solves.
      Write it for someone who has never seen the workbook: a recruiter, a classmate, you in six months. -->
 
@@ -31,18 +32,11 @@ A java application that allows users to buy different types of memberships.
      - Shows every product in the store
      - Searches products by name (bonus) -->
 
--
--
--
-
-## User Stories
-
-<!-- The stories you worked from, one per bullet, in the format you learned in Workbook 3b:
-     As a [type of user], I want [some goal] so that [some reason].
-     Same text as the cards on your GitHub project board. -->
-
-- As a ..., I want ..., so that ...
-- As a ..., I want ..., so that ...
+- Create a basic membership.
+- Create a family membership.
+- create a premium membership.
+- Display the member details.
+- Display guest passes.
 
 ## Setup
 
@@ -58,17 +52,6 @@ A java application that allows users to buy different types of memberships.
 3. Wait for IntelliJ to finish indexing (progress bar at the bottom).
 4. Open `src/main/java/com/pluralsight/YourMainClassName.java`. <!-- replace YourMainClassName with the class that has main -->
 5. Right-click inside the file and choose Run 'YourMainClassName.main()'.
-
-### Data and configuration
-
-<!-- OPTIONAL. Anything the program needs that is not code: data files and where they must sit, files the
-     program creates, a database script to run first, a settings file to edit (connection, port).
-     If there is nothing, delete this subsection, heading included.
-     Example:
-     - `inventory.csv` sits at the project root, next to `pom.xml`. The program reads it at start.
-     - `logs.txt` is created by the program at the project root on the first run. -->
-
--
 
 ## Technologies Used
 
@@ -91,9 +74,8 @@ A java application that allows users to buy different types of memberships.
      Optional GIF: LICEcap (free, Windows and Mac, <https://www.cockos.com/licecap/>) records a region of the
      screen straight to a .gif. Keep it under 10 seconds and under 10 MB, save it into `images`. -->
 
-![Main menu](images/menu.png)
+![Console Screenshot](images/Console%20screenshot.png)
 
-![One feature in action](images/feature.png)
 
 ## A piece of code I am proud of
 
@@ -102,31 +84,39 @@ A java application that allows users to buy different types of memberships.
      demo day and what you talk about in an interview. -->
 
 ```java
-
+public void useGuestPass() {
+    if (guestPasses > 0) {
+        guestPasses--;
+        System.out.printf("%s used a guest pass. Pases left: %d\n", getMemberName(), guestPasses);
+    } else {
+        System.out.println(getMemberName() + " has no guest passes left!!");
+    }
+}
 ```
-
-## Future Work
+- Chose this piece because, it is simple and gets the task done as expected.
+## Future Work 
 
 <!-- What you would add or fix next, one bullet each. Unfinished bonuses belong here. -->
 
--
--
+- Customize the user input.
+- Track the membership contract end date.
+- Cancel a membership.
 
 ## Resources
 
 <!-- What helped you: the workbook, the week's hub pages, a tutorial, a documentation page. Real links. -->
 
 - Java YearUp Fall 2026 hub: <https://raymaroun.github.io/yearup-java-fall2026/>
--
+
 
 ## Author
 
 <!-- Your name and, if you like, your GitHub profile link. For a team workshop, one line per person with what each one built. -->
 
-- **Your Name**
+- **Kaleab Tsegaye**
 
 ## Thanks
 
 <!-- Optional. The people who helped: the instructor, a classmate who debugged with you, a mentor. -->
 
-- Thank you to ... for ...
+- Thank you to Raymond Maroun for the support and guidance.
