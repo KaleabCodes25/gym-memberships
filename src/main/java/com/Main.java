@@ -37,6 +37,7 @@ public class Main {
         memberships.add(seven);
         printCosts(memberships);
         secondLoop(memberships);
+        thirdLoop(memberships);
 
     }
     public static void printCosts(List<Membership> memberships){
@@ -67,6 +68,12 @@ public class Main {
             } else if (membership instanceof FamilyMembership) {
                 System.out.printf("%s: print %d key cards%n",membership.getMemberName(),((FamilyMembership) membership).getExtraMembers()+1);
             }
+        }
+    }
+    public static void thirdLoop(List<Membership> memberships){
+        System.out.println("--- Kinds ---");
+        for (Membership membership : memberships) {
+            System.out.println(membership.getMemberName() + ": " + membership.getClass().getSimpleName() );
         }
     }
 
