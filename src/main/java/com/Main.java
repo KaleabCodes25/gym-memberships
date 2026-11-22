@@ -13,7 +13,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         System.out.print("=== Gym Memberships ===\n");
-        Membership first = new Membership("Henry Clark", 3, new BigDecimal("30.00"));
+        //Membership first = new Membership("Henry Clark", 3, new BigDecimal("30.00"));
 
         BasicMembership second = new BasicMembership("Alice Johnson", 6, new BigDecimal("30.00"), true);
 
@@ -27,8 +27,7 @@ public class Main {
 
         FamilyMembership seven = new FamilyMembership("Emma Wilson",6,new BigDecimal("30.00"),1);
 
-        List<Membership> memberships = new ArrayList<>();
-        memberships.add(first);
+        List<Membership> memberships = new ArrayList<>();;
         memberships.add(second);
         memberships.add(third);
         memberships.add(four);
@@ -45,7 +44,9 @@ public class Main {
         BigDecimal allContract = BigDecimal.ZERO;
         for (Membership membership : memberships) {
             System.out.println(membership);
-            System.out.printf("Monthly price: $%.2f, sing-up fee: $%.2f, contract total: $%.2f%n",membership.getMonthlyPrice(),membership.getSignUpFee(),membership.getContractTotal());
+            System.out.printf("Monthly price: $%.2f, sing-up fee: $%.2f, contract total: $%.2f%n",
+                    membership.getMonthlyPrice(),membership.getSignUpFee(),membership.getContractTotal());
+
             monthlyPriceTotal = monthlyPriceTotal.add(membership.getMonthlyPrice());
             allContract = allContract.add(membership.getContractTotal());
 
@@ -61,19 +62,22 @@ public class Main {
         for (Membership membership : memberships) {
             if(membership instanceof BasicMembership member) {
                 if(member.isOffPeakOnly()){
-                    System.out.println(membership.getMemberName() + ": entry between 10:00 and 16:00 only");
+                    System.out.println(membership.getMemberName() +
+                            ": entry between 10:00 and 16:00 only");
                 }
             } else if (membership instanceof PremiumMembership) {
                 ((PremiumMembership) membership).useGuestPass();
             } else if (membership instanceof FamilyMembership) {
-                System.out.printf("%s: print %d key cards%n",membership.getMemberName(),((FamilyMembership) membership).getExtraMembers()+1);
+                System.out.printf("%s: print %d key cards%n",membership.getMemberName(),
+                        ((FamilyMembership) membership).getExtraMembers()+1);
             }
         }
     }
     public static void thirdLoop(List<Membership> memberships){
         System.out.println("--- Kinds ---");
         for (Membership membership : memberships) {
-            System.out.println(membership.getMemberName() + ": " + membership.getClass().getSimpleName() );
+            System.out.println(membership.getMemberName() +
+                    ": " + membership.getClass().getSimpleName() );
         }
     }
 
