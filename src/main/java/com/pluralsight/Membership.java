@@ -14,9 +14,7 @@ public abstract class Membership {
     }
 
 
-    public BigDecimal getMonthlyPrice(){
-        return baseRate;
-    }
+    public abstract BigDecimal getMonthlyPrice();
 
     public BigDecimal getSignUpFee(){
 
